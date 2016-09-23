@@ -127,8 +127,21 @@
         
         var listFigureBody = document.getElementsByClassName('list')[0];
         var listBtn = document.getElementsByClassName('btn')[0].getElementsByTagName('li');
-        
+
+
+        //!!!!! 定义一个变量保存上一个被选中的元素的索引值
+        var preIndex = 0;
+
         function core(index) {
+
+            listBtn[preIndex].className = '';
+            listBtn[index].className= 'active';
+
+            listFigureBody.style.marginLeft = -index*1000 + 'px';
+
+            preIndex=index;
+
+            return ;
             for(let i = 0; i<listBtn.length;i++){
                 listBtn[i].className= index==i ? 'active' : '';
 
