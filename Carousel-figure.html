@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel-figure</title>
+    <style>
+         *{
+             margin: 0;
+             padding: 0;
+             list-style: none;
+         }
+         html{
+             font-size: 62.5%;
+             font-family: 'microsoft YaHei';
+         }
+         .banner{
+             width: 100rem;
+             height: 40rem;
+             margin: 10rem auto;
+             overflow: hidden;
+             position: relative;
+         }
+         .banner ul li{
+             display: none;
+         }
+         .banner .list .active{
+             display: block;
+         }
+         .banner .list li a{
+             height: 40rem;
+             display: block;
+             background: url('img/1.jpg') no-repeat center 0;
+         }
+         .banner .btn {
+             position: absolute;
+             left: 50%;
+             margin-left: -25rem;
+             bottom: 1.8rem;
+         }
+        .banner .btn li{
+            margin:0 1rem;
+            float: left;
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            background: #ccc;
+            font-size: 1.3rem;
+            line-height: 3rem;
+            text-align: center;
+
+        }
+         .banner .btn li:hover{
+             background: #c3cbf0;
+             font-weight: bold;
+         }
+         .banner .arrow{
+             width: 40px;
+             font:14px/60px "微软雅黑";
+             color: #fff;
+             text-align: center;
+             background: rgba(0,0,0,0.3);
+             position: absolute;
+             text-decoration: none;
+             top: 50%;
+             margin-top: -30px;
+         }
+         .banner .right{
+             right: 0;
+         }
+         .banner .arrow:hover{
+             background: rgba(0,0,0,0.5);
+         }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <ul class="list">
+        <li class="active"><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+    <ul class="btn">
+        <li>1</li>
+        <li>2</li>
+        <li class="active">3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+
+    <a href="javascript:;" class="arrow left">左</a>
+    <a href="javascript:;" class="arrow right">右</a>
+
+</div>
+<script>
+    (function () {
+        var listFigure = document.getElementsByClassName('list')[0].getElementsByTagName('a');
+        for(let i = 0 ; i< listFigure.length; i++ ){
+            listFigure[i].style.backgroundImage = `url(img/${i}.jpg)`;
+            console.log(`url(img/${i}.jpg)`);
+        }
+    })();
+</script>
+</body>
+</html>
