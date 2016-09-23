@@ -18,18 +18,18 @@
              height: 40rem;
              margin: 10rem auto;
              position: relative;
+             overflow: hidden;
+         }
+         .banner .list{
+             width: 1000rem;
+             transition: 0.5s;
          }
          .banner .list  li{
              width: 100rem;
-             opacity: 0;
-             transition: all 0.5s;
-             position: absolute;
-             top:0;
-             left:0;
+             float: left;
          }
          .banner .list .active{
-             opacity: 1;
-             z-index: 1;
+
          }
          .banner .list li a{
              height: 40rem;
@@ -72,6 +72,9 @@
              top: 50%;
              margin-top: -30px;
              z-index: 2;
+         }
+         .banner .left{
+             left: 0;
          }
          .banner .right{
              right: 0;
@@ -122,13 +125,15 @@
         }
 
         
-        var listFigureBody = document.getElementsByClassName('list')[0].getElementsByTagName('li');
+        var listFigureBody = document.getElementsByClassName('list')[0];
         var listBtn = document.getElementsByClassName('btn')[0].getElementsByTagName('li');
         
         function core(index) {
             for(let i = 0; i<listBtn.length;i++){
                 listBtn[i].className= index==i ? 'active' : '';
-                listFigureBody[i].className= index==i ? 'active' : '';
+
+                listFigureBody.style.marginLeft=index*(-1000)+'px';
+//                listFigureBody[i].className= index==i ? 'active' : '';
             }
         }
 
